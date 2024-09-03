@@ -104,6 +104,8 @@
             <li>Go to the cinema</li>
         </ul>
 
+        <button id="toggleHobbiesButton">Show/Hide Hobbies</button>
+
         <h3>Favorite Series</h3>
         <ul class="series">
             <li>
@@ -124,12 +126,14 @@
             </li>
         </ul>
 
-        <button id="toggleButton">Show/Hide Hobbies</button>
+        <button id="toggleSeriesButton">Show/Hide Series</button>
     </div>
 
     <script>
-        // JavaScript para añadir interactividad al botón
-        document.getElementById('toggleButton').addEventListener('click', function() {
+        // JavaScript para añadir interactividad a los botones
+
+        // Botón para mostrar/ocultar hobbies
+        document.getElementById('toggleHobbiesButton').addEventListener('click', function() {
             const hobbiesList = document.querySelector('.hobbies');
             if (hobbiesList.style.display === 'none') {
                 hobbiesList.style.display = 'flex';
@@ -140,8 +144,21 @@
             }
         });
 
-        // Inicializar el estado de los hobbies ocultos
+        // Botón para mostrar/ocultar series
+        document.getElementById('toggleSeriesButton').addEventListener('click', function() {
+            const seriesList = document.querySelector('.series');
+            if (seriesList.style.display === 'none') {
+                seriesList.style.display = 'flex';
+                this.textContent = 'Hide Series';
+            } else {
+                seriesList.style.display = 'none';
+                this.textContent = 'Show Series';
+            }
+        });
+
+        // Inicializar los estados de las listas como ocultas
         document.querySelector('.hobbies').style.display = 'none';
+        document.querySelector('.series').style.display = 'none';
     </script>
 </body>
 </html>
